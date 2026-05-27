@@ -181,9 +181,17 @@
               <div class="stat-num">42</div>
               <div class="stat-lbl">2025 Weekly Buy Record </div>
             </div>
-            <div class="stat-card fade-in d4" id="stat-ranked">
-              <div class="stat-num">#1 of 20</div>
-              <div class="stat-lbl">Ranked Company-Wide</div>
+            <div class="flip-card fade-in d4" id="stat-flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="stat-num">#1 of 20</div>
+                  <div class="stat-lbl">Ranked Company-Wide</div>
+                </div>
+                <div class="flip-card-back">
+                  <video id="easter-egg-video" src="assets/bryanhabibi-win.MOV" muted playsinline></video>
+                </div>
+              </div>
+              <span class="flip-hint" aria-hidden="true">🎬</span>
             </div>
           </div>
         </div>
@@ -540,31 +548,73 @@
       });
     });
 
-    /* ── easter egg: stat card video ────────────────────────────────── */
+    /* ── easter egg: stat card flip ─────────────────────────────────── */
     (function () {
-      const card = document.getElementById('stat-ranked');
-      if (!card) return;
-      const originalHTML = card.innerHTML;
-      let clicks = 0;
-      card.style.cursor = 'pointer';
+      const card  = document.getElementById('stat-flip-card');
+      const video = document.getElementById('easter-egg-video');
+      if (!card || !video) return;
+      const hint = card.querySelector('.flip-hint');
 
-      card.addEventListener('click', () => {
+      const reduced   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const FLIP_DUR  = reduced ? 250 : 650;
+      let clicks      = 0;
+      let isFlipped   = false;
+      let isAnimating = false;
+
+      function flipBack() {
+        isAnimating = true;
+        card.classList.remove('is-flipped');
+        video.pause();
+        video.currentTime = 0;
+        hint.classList.remove('hidden');
+        hint.classList.add('visible');
+        setTimeout(() => {
+          isFlipped   = false;
+          isAnimating = false;
+          clicks      = 0;
+          card.classList.remove('click-1','click-2','click-3','click-4');
+        }, FLIP_DUR);
+      }
+
+      card.addEventListener('click', function () {
+        if (isAnimating) return;
+
+        if (isFlipped) { flipBack(); return; }
+
         clicks++;
 
-        if (clicks === 3) {
-          const lbl = card.querySelector('.stat-lbl');
-          if (lbl && !lbl.dataset.hinted) {
-            lbl.dataset.hinted = '1';
-            lbl.textContent += ' 🎬';
-          }
-        }
+        // pulse on every click
+        card.classList.remove('pulse');
+        void card.offsetWidth;
+        card.classList.add('pulse');
 
+        // deepen shadow per click
+        card.classList.remove('click-1','click-2','click-3','click-4');
+        card.classList.add('click-' + Math.min(clicks, 4));
+
+        // show hint emoji on click 3
+        if (clicks === 3) hint.classList.add('visible');
+
+        // trigger flip on click 5
         if (clicks >= 5) {
-          clicks = 0;
-          card.innerHTML = '<video src="assets/bryanhabibi-win.MOV" autoplay muted playsinline style="width:100%;height:auto;border-radius:var(--radius);object-fit:cover;display:block;pointer-events:none;"></video>';
-          const vid = card.querySelector('video');
-          vid.addEventListener('ended', () => { card.innerHTML = originalHTML; });
+          isAnimating = true;
+          hint.classList.remove('visible');
+          hint.classList.add('hidden');
+          setTimeout(() => {
+            card.classList.add('is-flipped');
+            video.play();
+            setTimeout(() => {
+              isFlipped   = true;
+              isAnimating = false;
+            }, FLIP_DUR);
+          }, 100);
         }
+      });
+
+      // auto flip back when video ends
+      video.addEventListener('ended', function () {
+        if (!isFlipped) return;
+        flipBack();
       });
     })();
 
