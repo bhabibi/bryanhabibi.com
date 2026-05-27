@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bryan Habibi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-switcher">
+        <a href="index.html" class="switcher-btn active">Bryan Habibi</a>
+        <a href="https://habibitakes.com" class="switcher-btn switcher-ht">
+          <img src="assets/habibitakes-button.jpg" alt="HabibiTakes" class="ht-btn-img" />
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Dark / light mode toggle — sun / moon icons -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="hero">
+    <div id="hero-bg"></div><!-- parallax layer -->
+
+    <div class="hero-content">
+      <!-- Eyebrow label -->
+      <p class="hero-eyebrow">Welcome to my corner of the web</p>
+
+      <!-- ★ Replace with your real name -->
+      <h1 class="hero-name">Bryan Habibi</h1>
+
+      <!-- ★ Replace with your tagline -->
+      <p class="hero-tagline">Reseller &middot; Entrepreneur &middot;</p>
+
+    </div>
+
+    <!-- Subtle scroll cue -->
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Circular photo placeholder -->
+        <div class="photo-wrap fade-in">
+          <div class="photo-circle">
+            <!--
+              TO ADD YOUR PHOTO:
+              Remove the svg & span below and replace with:
+              <img src="your-photo.jpg" alt="Bryan Habibi" style="width:100%;height:100%;object-fit:cover;">
+            -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span class="photo-label">Your Photo Here</span>
+          </div>
+        </div>
+
+        <!-- Bio + stats -->
+        <div>
+          <p class="section-label fade-in">About Me</p>
+          <h2 class="section-title fade-in d1">A little bit<br/><em>about me.</em></h2>
+
+          <!-- ★ Replace with your real bio -->
+          <p class="about-bio fade-in d2">
+            I'm <strong>Bryan Habibi</strong>, a sales and acquisitions professional
+            based in Long Beach, CA with nearly 15 years of experience
+            across retail, resale, and high-value purchasing. My career
+            spans the full spectrum of sales — from consumer electronics
+            at Best Buy and Apple to closing a $500K+ estate in the
+            luxury watch market. Most recently I served as the #1 ranked
+            purchasing specialist out of 20 at Bob's Watches, where I
+            generated $16M+ in gross profit through over 1,200+
+            acquisitions in a single year. I'm bilingual in English and
+            Farsi, and I bring the same attention to detail and client
+            focus to everything I take on.
+          </p>
+
+          <!-- 3 stat / highlight cards -->
+          <div class="stats">
+            <div class="stat-card fade-in d2">
+              <div class="stat-num">$500k+</div>
+              <div class="stat-lbl">Largest Deal Coordinated</div>
+            </div>
+            <div class="stat-card fade-in d3">
+              <div class="stat-num">42</div>
+              <div class="stat-lbl">2025 Weekly Buy Record </div>
+            </div>
+            <div class="stat-card fade-in d4">
+              <div class="stat-num">#1 of 20</div>
+              <div class="stat-lbl">Ranked Company-Wide</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RESUME
+       ============================================================ -->
+  <section id="resume">
+    <div class="container">
+      <p class="section-label fade-in">Experience &amp; Skills</p>
+      <h2 class="section-title fade-in d1">My Resume</h2>
+
+      <div class="resume-layout">
+
+        <!-- ── Timeline column ─────────────────────────── -->
+        <div class="timeline fade-in">
+          <h3 class="tl-heading">Work Experience</h3>
+          <div class="tl-rail"></div>
+
+          <!-- Job 1: Bob's Watches -->
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-date">Jan 2024 &mdash; Mar 2026</div>
+              <div class="tl-role">Lead Purchaser &mdash; Ranked #1 of 20 Company-Wide</div>
+              <div class="tl-company">Bob&rsquo;s Watches &middot; Newport Beach, CA</div>
+              <ul class="tl-bullets">
+                <li>Closed 1,200+ acquisitions in a single fiscal year, averaging 24 units/week with a peak of 42 units in one week</li>
+                <li>Generated $16M+ in estimated gross profit through watch acquisitions &mdash; ~15% of total company gross profit as a single contributor</li>
+                <li>Conducted real-time market valuations on Rolex, Patek Philippe, Audemars Piguet, Omega, and Cartier entirely via phone and email</li>
+                <li>Managed complex estate and bulk acquisitions with individual transactions exceeding $50,000 in company revenue</li>
+                <li>Trained and mentored junior team members on acquisition workflows, client communication, and watch valuation</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 2: Habibi Takes -->
+          <div class="tl-item fade-in d1">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-date">Jun 2019 &mdash; Jan 2024</div>
+              <div class="tl-role">Founder &amp; Operator</div>
+              <div class="tl-company">Habibi Takes &middot; Anaheim, CA</div>
+              <ul class="tl-bullets">
+                <li>Built and operated a product resale and distribution business across DTC and B2B channels</li>
+                <li>Moved 10,000+ cases of pet supply product over 6 months via Amazon, retail, and B2B distribution partners</li>
+                <li>Maintained 30&ndash;90 day inventory turnover through disciplined purchasing and regular inventory purges</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 3: Apple Inc. -->
+          <div class="tl-item fade-in d2">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-date">Sep 2022 &mdash; Aug 2023</div>
+              <div class="tl-role">Apple Reseller Sales Specialist</div>
+              <div class="tl-company">Apple Inc. &middot; OC / LA Region, CA</div>
+              <ul class="tl-bullets">
+                <li>Trained and certified employees at Costco, Best Buy, and Target on Apple products and consultative selling</li>
+                <li>Served as Apple brand representative embedded within major retail partners to drive sell-through and elevate staff performance</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 4: Best Buy -->
+          <div class="tl-item fade-in d3">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-date">Jun 2017 &mdash; Mar 2019</div>
+              <div class="tl-role">Mobile Sales Associate</div>
+              <div class="tl-company">Best Buy &middot; Orange County / City of Industry, CA</div>
+              <ul class="tl-bullets">
+                <li>Drove mobile device and plan sales across AT&amp;T, Verizon, and Sprint; consistently ranked among top associates</li>
+                <li>Built customer rapport through needs-based consultations, increasing accessory and protection plan attachment rates</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Core Competencies -->
+          <div class="tl-item fade-in d4">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-date">Core Competencies</div>
+              <div class="comp-grid">
+                <div class="comp-pair">Luxury Watch Valuation &middot; Remote Negotiation</div>
+                <div class="comp-pair">Estate &amp; Bulk Acquisitions &middot; Market Pricing</div>
+                <div class="comp-pair">Pipeline Management &middot; Client Relationship Mgmt</div>
+                <div class="comp-pair">Microsoft Office &amp; CRM Systems &middot; Adobe Creative Suite</div>
+                <div class="comp-pair">Bilingual: English &amp; Farsi</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /timeline -->
+
+        <!-- ── Sidebar column ──────────────────────────── -->
+        <div class="resume-sidebar">
+
+          <!-- Education -->
+          <div class="sidebar-block fade-in d1">
+            <h3 class="tl-heading">Education</h3>
+            <div class="edu-card">
+              <div class="tl-date">2020 &mdash; 2022</div>
+              <div class="tl-role">Business Administration</div>
+              <div class="tl-company">Santiago Canyon College &middot; Orange, CA</div>
+            </div>
+          </div>
+
+        </div><!-- /sidebar -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: info copy -->
+        <div>
+          <p class="section-label fade-in">Get In Touch</p>
+          <h2 class="section-title fade-in d1">Let's<br/><em>connect.</em></h2>
+          <p class="fade-in d2">
+            Whether you have a business inquiry, want to collaborate, or just want to say hi —
+            my inbox is always open. Fill out the form and I'll get back to you soon.
+          </p>
+        </div>
+
+        <!-- Right: contact form — wired to Formspree -->
+        <!-- After creating a free account at formspree.io, replace  -->
+        <!-- REPLACE_WITH_YOUR_ID in the fetch URL below with your   -->
+        <!-- real form ID (e.g. xpwzabcd). The destination email is  -->
+        <!-- set inside your Formspree dashboard.                     -->
+        <div class="contact-form fade-in d2">
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="fname">Bryan Habibi</label>
+              <input type="text" id="fname" name="name" placeholder="Johnny Appleseed" required />
+            </div>
+            <div class="form-row">
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" name="email" placeholder="Johnny@HabibiTakes.com" required />
+            </div>
+            <div class="form-row">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell me what's on your mind…" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message &rarr;</button>
+            <div id="form-error"></div>
+            <p class="form-note">Your message goes straight to my inbox.<br/>I typically respond within 24&ndash;48 hours.</p>
+          </form>
+
+          <!-- Shown on successful submission -->
+          <div id="form-success">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <p>Thanks for reaching out!</p>
+            <small>I&rsquo;ll get back to you soon.</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <p>&copy; <span id="yr"></span> &mdash; Bryan Habibi</p>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    /* ── Dark / Light mode ─────────────────────────────────────────
+       Reads system preference on first visit; remembers manual
+       overrides in localStorage. Applies class "dark" to <html>.
+    ─────────────────────────────────────────────────────────────── */
+    (function () {
+      const html        = document.documentElement;
+      const saved       = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) html.classList.add('dark');
+    })();
+
+    const themeToggle = document.getElementById('themeToggle');
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.classList.toggle('dark', e.matches);
+      }
+    });
+
+    /* ── Footer year ───────────────────────────────────────────── */
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    /* ── Nav: scroll glass effect + active-link highlighting ───── */
+    const navbar    = document.getElementById('navbar');
+    const sections  = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    function onScroll() {
+      // Translucent glass after 60 px
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+
+      // Highlight whichever section is in view
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 130) current = sec.id;
+      });
+      navAnchors.forEach(a =>
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current)
+      );
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run once on load
+
+    /* ── Mobile hamburger ──────────────────────────────────────── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    // Close menu on link click
+    navAnchors.forEach(a => a.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    }));
+
+    /* ── Parallax hero background ──────────────────────────────── */
+    const heroBg = document.getElementById('hero-bg');
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth > 600) {
+        heroBg.style.transform = `translateY(${window.scrollY * 0.38}px)`;
+      }
+    }, { passive: true });
+
+    /* ── Intersection Observer: fade-in on scroll ──────────────── */
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target); // animate once only
+        }
+      }),
+      { threshold: 0.1, rootMargin: '0px 0px -36px 0px' }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+    /* ── Contact form: Formspree async submission ─────────────────
+       Replace REPLACE_WITH_YOUR_ID with the ID from your Formspree
+       dashboard (e.g. xpwzabcd). Set the destination email to
+       contact@habibitakes.com inside the Formspree project settings.
+    ─────────────────────────────────────────────────────────────── */
+    const form    = document.getElementById('contactForm');
+    const success = document.getElementById('form-success');
+    const errEl   = document.getElementById('form-error');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const name    = form.name.value.trim();
+      const email   = form.email.value.trim();
+      const message = form.message.value.trim();
+      if (!name || !email || !message) return;
+
+      const btn = form.querySelector('.submit-btn');
+      btn.textContent     = 'Almost There...';
+      btn.disabled        = true;
+      errEl.style.display = 'none';
+
+      try {
+        const res = await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_ID', {
+          method:  'POST',
+          headers: { 'Accept': 'application/json' },
+          body:    new FormData(form)
+        });
+
+        if (res.ok) {
+          form.style.display    = 'none';
+          success.style.display = 'block';
+        } else {
+          const data = await res.json();
+          const msg  = data.errors?.map(err => err.message).join(' ')
+                       || 'Something went wrong. Please try again.';
+          throw new Error(msg);
+        }
+      } catch (err) {
+        const isNetwork = err instanceof TypeError;
+        errEl.textContent   = isNetwork
+          ? 'Unable to send — please check your connection and try again.'
+          : (err.message || 'Something went wrong. Please try again.');
+        errEl.style.display = 'block';
+        btn.textContent     = 'Send Message →';
+        btn.disabled        = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
