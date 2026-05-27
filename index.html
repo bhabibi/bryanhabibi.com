@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/BH_THUMB.png" />
 </head>
 <body>
 
@@ -98,11 +99,7 @@
               Remove the svg & span below and replace with:
               <img src="your-photo.jpg" alt="Bryan Habibi" style="width:100%;height:100%;object-fit:cover;">
             -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-            <span class="photo-label">Your Photo Here</span>
+            <img src="assets/BryanHabibi_Headshot.jpg" alt="Bryan Habibi" style="width:100%;height:100%;object-fit:cover;" />
           </div>
         </div>
 
@@ -283,7 +280,7 @@
         <!-- real form ID (e.g. xpwzabcd). The destination email is  -->
         <!-- set inside your Formspree dashboard.                     -->
         <div class="contact-form fade-in d2">
-          <form id="contactForm" novalidate>
+          <form id="contact-form-bh" novalidate>
             <div class="form-row">
               <label for="fname">Bryan Habibi</label>
               <input type="text" id="fname" name="name" placeholder="Johnny Appleseed" required />
@@ -296,7 +293,7 @@
               <label for="fmessage">Message</label>
               <textarea id="fmessage" name="message" placeholder="Tell me what's on your mind…" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Message &rarr;</button>
+            <button type="submit" class="submit-btn" data-fs-submit-btn>Send Message &rarr;</button>
             <div id="form-error"></div>
             <p class="form-note">Your message goes straight to my inbox.<br/>I typically respond within 24&ndash;48 hours.</p>
           </form>
@@ -412,12 +409,8 @@
     );
     document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 
-    /* ── Contact form: Formspree async submission ─────────────────
-       Replace REPLACE_WITH_YOUR_ID with the ID from your Formspree
-       dashboard (e.g. xpwzabcd). Set the destination email to
-       contact@habibitakes.com inside the Formspree project settings.
-    ─────────────────────────────────────────────────────────────── */
-    const form    = document.getElementById('contactForm');
+    /* ── Contact form: Formspree async submission ─────────────────── */
+    const form    = document.getElementById('contact-form-bh');
     const success = document.getElementById('form-success');
     const errEl   = document.getElementById('form-error');
 
@@ -428,13 +421,13 @@
       const message = form.message.value.trim();
       if (!name || !email || !message) return;
 
-      const btn = form.querySelector('.submit-btn');
-      btn.textContent     = 'Almost There...';
+      const btn = form.querySelector('[data-fs-submit-btn]');
+      btn.textContent     = 'Sending...';
       btn.disabled        = true;
       errEl.style.display = 'none';
 
       try {
-        const res = await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_ID', {
+        const res = await fetch('https://formspree.io/f/mqejgoge', {
           method:  'POST',
           headers: { 'Accept': 'application/json' },
           body:    new FormData(form)
