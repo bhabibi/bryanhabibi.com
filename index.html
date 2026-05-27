@@ -626,56 +626,6 @@
       });
     })();
 
-    /* ── easter egg: idle timeout toast ─────────────────────────────── */
-    (function () {
-      let shown = false, idleTimer = null;
-      const IDLE_MS = 3 * 60 * 1000;
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      function showToast() {
-        if (shown) return;
-        shown = true;
-        if (window.trackEasterEgg) window.trackEasterEgg('💤 Idle Toast Triggered');
-        const toast = document.createElement('div');
-        toast.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(0,0,0,0.85);color:#fff;padding:14px 20px;border-radius:12px;font-size:14px;line-height:1.55;z-index:8000;box-shadow:0 4px 24px rgba(0,0,0,0.3);opacity:0;transition:opacity 0.4s ease,transform 0.4s ease;text-align:center;max-width:340px;font-family:var(--sans,system-ui,sans-serif);';
-        toast.innerHTML = 'Still here? Don\'t be shy — say hi 👋 <a href="#contact" style="color:#b07d4e;text-decoration:underline;font-weight:600;white-space:nowrap;margin-left:4px;">Get in touch →</a>';
-        document.body.appendChild(toast);
-
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-          toast.style.opacity = '1';
-          toast.style.transform = 'translateX(-50%) translateY(0)';
-        }));
-
-        let autoDismiss;
-        function off() {
-          clearTimeout(autoDismiss);
-          document.removeEventListener('click', onInteract);
-          document.removeEventListener('scroll', onInteract);
-          document.removeEventListener('mousemove', onInteract);
-        }
-        function dismiss() {
-          if (!document.body.contains(toast)) return;
-          toast.style.opacity = '0';
-          toast.style.transform = 'translateX(-50%) translateY(20px)';
-          setTimeout(() => { if (document.body.contains(toast)) toast.remove(); }, 400);
-          off();
-        }
-        function onInteract() { dismiss(); }
-        autoDismiss = setTimeout(dismiss, 6000);
-        document.addEventListener('click', onInteract);
-        document.addEventListener('scroll', onInteract, { passive: true });
-        document.addEventListener('mousemove', onInteract);
-      }
-
-      function resetIdle() {
-        clearTimeout(idleTimer);
-        if (!shown) idleTimer = setTimeout(showToast, IDLE_MS);
-      }
-      document.addEventListener('scroll', resetIdle, { passive: true });
-      document.addEventListener('click', resetIdle);
-      document.addEventListener('mousemove', resetIdle);
-      resetIdle();
-    })();
 
     /* ── Contact form: Formspree async submission ─────────────────── */
     const form    = document.getElementById('contact-form-bh');
