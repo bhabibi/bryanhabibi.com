@@ -559,7 +559,7 @@
 
         if (clicks >= 5) {
           clicks = 0;
-          card.innerHTML = '<video src="assets/bryanhabibi-win.mov" autoplay muted playsinline style="width:100%;height:auto;border-radius:var(--radius);object-fit:cover;display:block;pointer-events:none;"></video>';
+          card.innerHTML = '<video src="assets/bryanhabibi-win.MOV" autoplay muted playsinline style="width:100%;height:auto;border-radius:var(--radius);object-fit:cover;display:block;pointer-events:none;"></video>';
           const vid = card.querySelector('video');
           vid.addEventListener('ended', () => { card.innerHTML = originalHTML; });
         }
