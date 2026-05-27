@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bryan Habibi</title>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/BH_THUMB.png" />
@@ -21,6 +24,19 @@
   <meta name="twitter:description" content="Sales and acquisitions professional based in Southern California. Bilingual in English and Farsi." />
   <meta name="twitter:image" content="https://bryanhabibi.com/assets/BH_THUMB.png" />
   <link rel="canonical" href="https://bryanhabibi.com" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bryan Habibi",
+    "url": "https://bryanhabibi.com",
+    "jobTitle": "Sales and Acquisitions Professional",
+    "worksFor": { "@type": "Organization", "name": "Bob's Watches" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Long Beach", "addressRegion": "CA", "addressCountry": "US" },
+    "knowsLanguage": ["English", "Farsi"],
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
 
@@ -86,8 +102,25 @@
       <!-- ★ Replace with your real name -->
       <h1 class="hero-name">Bryan Habibi</h1>
 
-      <!-- ★ Replace with your tagline -->
-      <p class="hero-tagline">Sales Professional &middot; Entrepreneur &middot; Bilingual</p>
+      <!-- Tagline: filled by typewriter JS -->
+      <p class="hero-tagline" id="heroTagline" aria-label="Sales Professional · Entrepreneur · Bilingual"></p>
+
+      <!-- Social icon links -->
+      <div class="hero-socials" aria-label="Social links">
+        <a href="#" class="hero-social-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit Bryan Habibi on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="mailto:contact@habibitakes.com" class="hero-social-btn" aria-label="Email Bryan Habibi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 7l-10 7L2 7"/>
+          </svg>
+        </a>
+      </div>
 
     </div>
 
@@ -114,7 +147,7 @@
               Remove the svg & span below and replace with:
               <img src="your-photo.jpg" alt="Bryan Habibi" style="width:100%;height:100%;object-fit:cover;">
             -->
-            <img src="assets/BryanHabibi_Headshot.jpg" alt="Bryan Habibi professional headshot" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="assets/BryanHabibi_Headshot.jpg" alt="Bryan Habibi professional headshot" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
           </div>
         </div>
 
@@ -395,14 +428,24 @@
     const navLinks  = document.getElementById('navLinks');
 
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
+      const isOpen = navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
     });
     // Close menu on link click
     navAnchors.forEach(a => a.addEventListener('click', () => {
       navToggle.classList.remove('open');
       navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
     }));
+    // Close on outside click
+    document.addEventListener('click', e => {
+      if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
 
     /* ── Parallax hero background ──────────────────────────────── */
     const heroBg = document.getElementById('hero-bg');
@@ -459,6 +502,41 @@
         counterIo.observe(el.closest('.stat-card') || el);
       });
     })();
+
+    /* ── Typewriter effect ───────────────────────────────────────── */
+    (function () {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function typewrite(el, text, delay) {
+        if (reduced) { el.textContent = text; return; }
+        el.textContent = '';
+        el.classList.add('tw-typing');
+        let i = 0;
+        setTimeout(() => {
+          const iv = setInterval(() => {
+            el.textContent += text[i++];
+            if (i >= text.length) {
+              clearInterval(iv);
+              setTimeout(() => el.classList.remove('tw-typing'), 1000);
+            }
+          }, 45);
+        }, delay);
+      }
+      const tag = document.getElementById('heroTagline');
+      if (tag) typewrite(tag, 'Sales Professional · Entrepreneur · Bilingual', 1500);
+    })();
+
+    /* ── Page transition ─────────────────────────────────────────── */
+    document.querySelectorAll('.switcher-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const href = btn.getAttribute('href');
+        if (!href || href === '#' || btn.classList.contains('active')) return;
+        e.preventDefault();
+        document.body.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'translateY(-10px)';
+        setTimeout(() => { window.location.href = href; }, 300);
+      });
+    });
 
     /* ── Contact form: Formspree async submission ─────────────────── */
     const form    = document.getElementById('contact-form-bh');
