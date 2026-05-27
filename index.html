@@ -37,6 +37,13 @@
     "sameAs": []
   }
   </script>
+  <script>
+    window.SITE_ID    = 'bryan';
+    window.SITE_NAME  = 'Bryan Habibi';
+    window.SITE_EMOJI = '👔';
+    window.SITE_COLOR = 0xb07d4e;
+  </script>
+  <script defer src="analytics.js"></script>
 </head>
 <body>
 
@@ -49,7 +56,7 @@
     <div class="nav-inner">
       <div class="nav-switcher">
         <a href="https://bryanhabibi.com" class="switcher-btn active" aria-label="Go to Bryan Habibi site">Bryan Habibi</a>
-        <a href="https://habibitakes.com" class="switcher-btn switcher-ht" aria-label="Go to HabibiTakes site">
+        <a href="https://habibitakes.com" class="switcher-btn switcher-ht" aria-label="Go to HabibiTakes site" data-track="nav-to-ht">
           <img src="assets/habibitakes-button.jpg" alt="HabibiTakes logo" class="ht-btn-img" />
         </a>
       </div>
@@ -107,14 +114,14 @@
 
       <!-- Social icon links -->
       <div class="hero-socials" aria-label="Social links">
-        <a href="https://www.linkedin.com/in/habibitakes" class="hero-social-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit Bryan Habibi on LinkedIn">
+        <a href="https://www.linkedin.com/in/habibitakes" class="hero-social-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit Bryan Habibi on LinkedIn" data-track="linkedin-click">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
             <rect x="2" y="9" width="4" height="12"/>
             <circle cx="4" cy="4" r="2"/>
           </svg>
         </a>
-        <a href="#contact" class="hero-social-btn" aria-label="Go to contact section">
+        <a href="#contact" class="hero-social-btn" aria-label="Go to contact section" data-track="email-click">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <path d="M22 7l-10 7L2 7"/>
@@ -219,7 +226,7 @@
           <!-- Job 1: Bob's Watches -->
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-card">
+            <div class="tl-card" data-track="resume-bobs-watches">
               <div class="tl-date">Jan 2024 &mdash; Mar 2026</div>
               <div class="tl-role">Lead Purchaser &mdash; Ranked #1 of 20 Company-Wide</div>
               <div class="tl-company">Bob&rsquo;s Watches &middot; Newport Beach, CA</div>
@@ -236,7 +243,7 @@
           <!-- Job 2: Habibi Takes -->
           <div class="tl-item fade-in d1">
             <div class="tl-dot"></div>
-            <div class="tl-card">
+            <div class="tl-card" data-track="resume-habibi-takes">
               <div class="tl-date">Jun 2019 &mdash; Jan 2024</div>
               <div class="tl-role">Founder &amp; Operator</div>
               <div class="tl-company">Habibi Takes &middot; Anaheim, CA</div>
@@ -251,7 +258,7 @@
           <!-- Job 3: Apple Inc. -->
           <div class="tl-item fade-in d2">
             <div class="tl-dot"></div>
-            <div class="tl-card">
+            <div class="tl-card" data-track="resume-apple">
               <div class="tl-date">Sep 2022 &mdash; Aug 2023</div>
               <div class="tl-role">Apple Reseller Sales Specialist</div>
               <div class="tl-company">Apple Inc. &middot; OC / LA Region, CA</div>
@@ -265,7 +272,7 @@
           <!-- Job 4: Best Buy -->
           <div class="tl-item fade-in d3">
             <div class="tl-dot"></div>
-            <div class="tl-card">
+            <div class="tl-card" data-track="resume-best-buy">
               <div class="tl-date">Jun 2017 &mdash; Mar 2019</div>
               <div class="tl-role">Mobile Sales Associate</div>
               <div class="tl-company">Best Buy &middot; Orange County / City of Industry, CA</div>
@@ -355,7 +362,7 @@
           </form>
 
           <!-- Shown on successful submission -->
-          <div id="form-success">
+          <div id="form-success" data-fs-success>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
               <polyline points="22 4 12 14.01 9 11.01"/>
@@ -603,6 +610,7 @@
           setTimeout(() => {
             card.classList.add('is-flipped');
             video.play();
+            if (window.trackEasterEgg) window.trackEasterEgg('🎬 #1 Card Flip');
             setTimeout(() => {
               isFlipped   = true;
               isAnimating = false;
@@ -627,6 +635,7 @@
       function showToast() {
         if (shown) return;
         shown = true;
+        if (window.trackEasterEgg) window.trackEasterEgg('💤 Idle Toast Triggered');
         const toast = document.createElement('div');
         toast.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(0,0,0,0.85);color:#fff;padding:14px 20px;border-radius:12px;font-size:14px;line-height:1.55;z-index:8000;box-shadow:0 4px 24px rgba(0,0,0,0.3);opacity:0;transition:opacity 0.4s ease,transform 0.4s ease;text-align:center;max-width:340px;font-family:var(--sans,system-ui,sans-serif);';
         toast.innerHTML = 'Still here? Don\'t be shy — say hi 👋 <a href="#contact" style="color:#b07d4e;text-decoration:underline;font-weight:600;white-space:nowrap;margin-left:4px;">Get in touch →</a>';
