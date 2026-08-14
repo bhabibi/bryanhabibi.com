@@ -56,15 +56,13 @@
     <div class="nav-inner">
       <div class="nav-switcher">
         <a href="https://bryanhabibi.com" class="switcher-btn active" aria-label="Go to Bryan Habibi site">Bryan Habibi</a>
-        <a href="https://habibitakes.com" class="switcher-btn switcher-ht" aria-label="Go to HabibiTakes site" data-track="nav-to-ht">
-          <img src="assets/habibitakes-button.jpg" alt="HabibiTakes logo" class="ht-btn-img" />
-        </a>
+        <a href="https://habibitakes.com" class="switcher-btn" aria-label="Go to HabibiTakes site" data-track="nav-to-ht">HabibiTakes</a>
       </div>
 
       <div class="nav-right">
         <ul class="nav-links" id="navLinks">
           <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -95,314 +93,304 @@
   </nav>
 
 
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
   <span id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute;height:0;overflow:hidden"></span>
-  <section id="hero">
-    <div id="hero-bg" role="img" aria-label="Abstract decorative background"></div>
 
-    <div class="hero-content">
-      <!-- Eyebrow label -->
-      <p class="hero-eyebrow">Welcome to my corner of the web</p>
+  <main class="wrap">
 
-      <!-- ★ Replace with your real name -->
+    <!-- ============================================================
+         HERO / ABOUT
+         ============================================================ -->
+    <section id="about" class="card hero-card fade-in">
+      <div id="hero-bg" aria-hidden="true"></div>
+      <p class="hero-eyebrow">Anaheim Hills, CA — Open to opportunities</p>
       <h1 class="hero-name">Bryan Habibi</h1>
+      <p class="hero-sub" id="heroTagline" aria-label="Luxury Goods Acquisition &amp; Sales Specialist"></p>
+      <p class="hero-bio">
+        Top-performing acquisition and purchasing professional with
+        extensive experience in luxury goods, valuation, negotiation,
+        and client relationship management. Consistently ranked among
+        the company's highest producers, generating significant gross
+        profit through high-volume acquisitions and complex, high-value
+        transactions. Proven ability to build trust and develop lasting
+        relationships with collectors, estate representatives, and
+        private sellers. Bilingual in English and Farsi, with experience
+        serving a diverse client base and cultivating strong
+        cross-cultural business relationships.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="pill pill-filled">Get in touch</a>
+        <a href="https://www.linkedin.com/in/habibitakes" class="pill pill-outline" target="_blank" rel="noopener noreferrer" aria-label="Visit Bryan Habibi on LinkedIn" data-track="linkedin-click">LinkedIn</a>
+        <a href="#contact" class="pill pill-outline" aria-label="Go to contact section" data-track="email-click">Email</a>
+      </div>
+    </section>
 
-      <!-- Tagline: filled by typewriter JS -->
-      <p class="hero-tagline" id="heroTagline" aria-label="Luxury Goods Acquisition & Sales Specialist"></p>
-
-      <!-- Social icon links -->
-      <div class="hero-socials" aria-label="Social links">
-        <a href="https://www.linkedin.com/in/habibitakes" class="hero-social-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit Bryan Habibi on LinkedIn" data-track="linkedin-click">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
-        </a>
-        <a href="#contact" class="hero-social-btn" aria-label="Go to contact section" data-track="email-click">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="M22 7l-10 7L2 7"/>
-          </svg>
-        </a>
+    <!-- ============================================================
+         TWO FEATURE CARDS
+         ============================================================ -->
+    <section class="grid-2" aria-label="Highlights">
+      <div class="card feature-card fade-in d1">
+        <p class="card-label">Specialization</p>
+        <h2 class="card-title">Luxury Watch Acquisitions</h2>
+        <p class="card-body">Rolex · Patek Philippe · Audemars Piguet · Omega · Cartier</p>
       </div>
 
-    </div>
-
-    <!-- Subtle scroll cue -->
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       ABOUT
-       ============================================================ -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-
-        <!-- Circular photo placeholder -->
-        <div class="photo-wrap fade-in">
-          <div class="photo-circle">
-            <!--
-              TO ADD YOUR PHOTO:
-              Remove the svg & span below and replace with:
-              <img src="your-photo.jpg" alt="Bryan Habibi" style="width:100%;height:100%;object-fit:cover;">
-            -->
-            <img src="assets/BryanHabibi_Headshot.jpg" alt="Bryan Habibi professional headshot" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+      <!-- Featured Deal — doubles as the easter-egg flip card -->
+      <div class="card feature-card flip-card fade-in d2" id="stat-flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <p class="card-label">Featured deal</p>
+            <h2 class="card-title">$500K+ Estate</h2>
+            <p class="card-body">Five rare Patek Philippe timepieces — negotiated end to end across four months</p>
+          </div>
+          <div class="flip-card-back">
+            <video id="easter-egg-video" src="assets/bryanhabibi-win.MOV" muted playsinline></video>
           </div>
         </div>
-
-        <!-- Bio + stats -->
-        <div>
-          <p class="section-label fade-in">About Me</p>
-          <h2 class="section-title fade-in d1">A little bit<br/><em>about me.</em></h2>
-
-          <!-- ★ Replace with your real bio -->
-          <p class="about-bio fade-in d2">
-            Top-performing acquisition and purchasing professional with
-            extensive experience in luxury goods, valuation, negotiation,
-            and client relationship management. Consistently ranked among
-            the company's highest producers, generating significant gross
-            profit through high-volume acquisitions and complex, high-value
-            transactions. Proven ability to build trust and develop lasting
-            relationships with collectors, estate representatives, and
-            private sellers. Bilingual in English and Farsi, with experience
-            serving a diverse client base and cultivating strong
-            cross-cultural business relationships.
-          </p>
-
-          <!-- 3 stat / highlight cards -->
-          <div class="stats">
-            <div class="stat-card fade-in d2">
-              <div class="stat-num">Top Ranked</div>
-              <div class="stat-lbl">Purchaser Company-Wide</div>
-            </div>
-            <div class="stat-card fade-in d3">
-              <div class="stat-num">High Volume</div>
-              <div class="stat-lbl">Luxury Watch Acquisitions</div>
-            </div>
-            <div class="flip-card fade-in d4" id="stat-flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="stat-num">$500K+</div>
-                  <div class="stat-lbl">Largest Deal Coordinated</div>
-                </div>
-                <div class="flip-card-back">
-                  <video id="easter-egg-video" src="assets/bryanhabibi-win.MOV" muted playsinline></video>
-                </div>
-              </div>
-              <span class="flip-hint" aria-hidden="true">🎬</span>
-            </div>
-          </div>
-        </div>
-
+        <span class="flip-hint" aria-hidden="true">🎬</span>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- ============================================================
+         EXPERIENCE TIMELINE
+         ============================================================ -->
+    <section id="experience" class="card fade-in">
+      <div class="xp-header">
+        <p class="card-label">Experience</p>
+        <h2 class="card-title">15 years across luxury, tech &amp; retail</h2>
+      </div>
 
-  <!-- ============================================================
-       RESUME
-       ============================================================ -->
-  <section id="resume">
-    <div class="container">
-      <p class="section-label fade-in">Experience &amp; Skills</p>
-      <h2 class="section-title fade-in d1">My Resume</h2>
+      <div class="xp-list-wrap">
 
-      <div class="resume-layout">
-
-        <!-- ── Timeline column ─────────────────────────── -->
-        <div class="timeline fade-in">
-          <h3 class="tl-heading">Work Experience</h3>
-          <div class="tl-rail"></div>
-
-          <!-- Job 1: Bob's Watches -->
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-card" data-track="resume-bobs-watches">
-              <div class="tl-date">Jan 2024 &mdash; March 2026</div>
-              <div class="tl-role">Lead Purchaser</div>
-              <div class="tl-company">Bob&rsquo;s Watches &middot; Newport Beach, CA</div>
-              <div class="tl-date">Performance Highlights</div>
-              <ul class="tl-bullets">
+        <!-- Job 1: Bob's Watches -->
+        <div class="xp-row" data-track="resume-bobs-watches">
+          <button class="xp-head" type="button" aria-expanded="false" aria-controls="xp-panel-1">
+            <span class="xp-dot filled" aria-hidden="true"></span>
+            <span class="xp-meta">
+              <span class="xp-role">Lead Purchaser — #1 Company-Wide</span>
+              <span class="xp-company">Bob's Watches · Newport Beach, CA</span>
+            </span>
+            <span class="xp-date">Jan 2024 &ndash; Mar 2026</span>
+            <svg class="xp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="xp-panel" id="xp-panel-1" role="region" aria-hidden="true">
+            <div class="xp-panel-inner">
+              <p class="xp-sub">Performance Highlights</p>
+              <ul class="xp-bullets">
                 <li>#1 of 20 ranked in purchasing company-wide by total units acquired.</li>
                 <li>Consistently maintained top commission tier in 90%+ of working weeks, including through seasonal fluctuations.</li>
               </ul>
-              <div class="tl-date">Role &amp; Responsibilities</div>
-              <ul class="tl-bullets">
+              <p class="xp-sub">Role &amp; Responsibilities</p>
+              <ul class="xp-bullets">
                 <li>Conducted real-time market valuation on pre-owned luxury timepieces across both modern and vintage Rolex, Patek Philippe, Audemars Piguet, Omega, and Cartier.</li>
                 <li>Maintained weekly 1 on 1 meetings with other purchasers to review call performance, email quality, and conduct mock negotiations to bridge skill gaps.</li>
                 <li>Managed complex consignment and estate acquisitions by providing valuations, engaging in fee negotiations, and managing the client relationship from start to finish.</li>
                 <li>Participated in monthly meetings with management to discuss buying prices and practices to maintain operations within optimal market positioning.</li>
               </ul>
-              <div class="tl-date">Featured Achievement</div>
-              <ul class="tl-bullets">
+              <p class="xp-sub">Featured Achievement</p>
+              <ul class="xp-bullets">
                 <li>Coordinated the acquisition and consignment of a $500,000 estate consisting of five rare Patek Philippe timepieces. Managed negotiations across multiple stakeholders over four months, accelerated sales timelines, and generated substantial company revenue while preserving key collector relationships.</li>
               </ul>
             </div>
           </div>
+        </div>
 
-          <!-- Job 2: Habibi Takes -->
-          <div class="tl-item fade-in d1">
-            <div class="tl-dot"></div>
-            <div class="tl-card" data-track="resume-habibi-takes">
-              <div class="tl-date">Jun 2019 &mdash; Present</div>
-              <div class="tl-role">Founder &amp; Operator</div>
-              <div class="tl-company">Habibi Takes &middot; Anaheim Hills, CA</div>
-              <ul class="tl-bullets">
+        <!-- Job 2: HabibiTakes -->
+        <div class="xp-row" data-track="resume-habibi-takes">
+          <button class="xp-head" type="button" aria-expanded="false" aria-controls="xp-panel-2">
+            <span class="xp-dot filled" aria-hidden="true"></span>
+            <span class="xp-meta">
+              <span class="xp-role">Founder &amp; Operator</span>
+              <span class="xp-company">HabibiTakes · Anaheim Hills, CA</span>
+            </span>
+            <span class="xp-date">Jun 2019 &ndash; Present</span>
+            <svg class="xp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="xp-panel" id="xp-panel-2" role="region" aria-hidden="true">
+            <div class="xp-panel-inner">
+              <ul class="xp-bullets">
                 <li>Operating an independent product sourcing, resale, and distribution business serving DTC and B2B clients. Maintained margins between 150%&ndash;300% through sourcing inventory at 80&ndash;90% off MSRP.</li>
                 <li>Managed purchasing decisions, oversaw inventory levels, adapted a dynamic pricing strategy, and maintained customer relationships through guaranteed logistics.</li>
                 <li>Identified, screened, and mentored several associates into launching their own similar ventures, using a rigorous compatibility-based vetting process to ensure a strong fit.</li>
               </ul>
-              <div class="tl-date">Featured Achievement</div>
-              <ul class="tl-bullets">
+              <p class="xp-sub">Featured Achievement</p>
+              <ul class="xp-bullets">
                 <li>Sourced over 10,000 cases of Dog and Cat food through Amazon Prime and sold across B2B and D2C channels over a nine-month period, coordinating sales strategy across Amazon B2B and retail partners. Implemented a community giveback program donating excess inventory to local animal shelters and veterinary hospitals, reinforcing brand goodwill and optimizing sell-through rates.</li>
               </ul>
             </div>
           </div>
+        </div>
 
-          <!-- Job 3: Apple Inc. -->
-          <div class="tl-item fade-in d2">
-            <div class="tl-dot"></div>
-            <div class="tl-card" data-track="resume-apple">
-              <div class="tl-date">Sep 2022 &mdash; Aug 2023</div>
-              <div class="tl-role">Reseller Sales Specialist</div>
-              <div class="tl-company">Apple Inc. &middot; Tustin, CA / Cupertino, CA</div>
-              <ul class="tl-bullets">
+        <!-- Job 3: Apple Inc. -->
+        <div class="xp-row" data-track="resume-apple">
+          <button class="xp-head" type="button" aria-expanded="false" aria-controls="xp-panel-3">
+            <span class="xp-dot" aria-hidden="true"></span>
+            <span class="xp-meta">
+              <span class="xp-role">Reseller Sales Specialist</span>
+              <span class="xp-company">Apple Inc. · Tustin, CA</span>
+            </span>
+            <span class="xp-date">Sep 2022 &ndash; Aug 2023</span>
+            <svg class="xp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="xp-panel" id="xp-panel-3" role="region" aria-hidden="true">
+            <div class="xp-panel-inner">
+              <ul class="xp-bullets">
                 <li>Advised partnering retail employees on Apple hardware, software, and accessory lineup, consistently meeting and exceeding individual sales targets at assigned locations.</li>
                 <li>Leveraged 10 years of product knowledge across the full Apple ecosystem to support consultative, needs-based selling with a focus on customer satisfaction and retention.</li>
               </ul>
             </div>
           </div>
+        </div>
 
-          <!-- Job 4: Best Buy -->
-          <div class="tl-item fade-in d3">
-            <div class="tl-dot"></div>
-            <div class="tl-card" data-track="resume-best-buy">
-              <div class="tl-date">Jun 2017 &mdash; Mar 2019</div>
-              <div class="tl-role">Mobile Sales Associate / Apple Specialist / AT&amp;T Expert</div>
-              <div class="tl-company">Best Buy &middot; Orange County / City of Industry, CA</div>
-              <ul class="tl-bullets">
+        <!-- Job 4: Best Buy -->
+        <div class="xp-row" data-track="resume-best-buy">
+          <button class="xp-head" type="button" aria-expanded="false" aria-controls="xp-panel-4">
+            <span class="xp-dot" aria-hidden="true"></span>
+            <span class="xp-meta">
+              <span class="xp-role">Mobile Sales Associate / Apple Specialist / AT&amp;T Expert</span>
+              <span class="xp-company">Best Buy · Orange County, CA</span>
+            </span>
+            <span class="xp-date">Jun 2017 &ndash; Mar 2019</span>
+            <svg class="xp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="xp-panel" id="xp-panel-4" role="region" aria-hidden="true">
+            <div class="xp-panel-inner">
+              <ul class="xp-bullets">
                 <li>Drove mobile device and plan sales across AT&amp;T, Verizon, and Sprint carrier lines, consistently ranking among top associates in the department.</li>
                 <li>Built customer rapport through needs-based consultations, resulting in increased attachment rate on accessories and protection plans.</li>
               </ul>
             </div>
           </div>
-
-          <!-- Core Competencies -->
-          <div class="tl-item fade-in d4">
-            <div class="tl-dot"></div>
-            <div class="tl-card">
-              <div class="tl-date">Core Competencies</div>
-              <div class="comp-grid">
-                <div class="comp-pair"><strong>Business Development &amp; Sales:</strong> Consultative Sales, Business Development, Account Management, Revenue Generation, Client Relationship Management, Negotiation &amp; Deliberations</div>
-                <div class="comp-pair"><strong>Procurement &amp; Acquisitions:</strong> Strategic Sourcing, Procurement, Vendor Management, Acquisition Strategy, Inventory Management</div>
-                <div class="comp-pair"><strong>Valuation &amp; Market Intelligence:</strong> Luxury Watch Valuation, Competitive Market Pricing Analysis</div>
-                <div class="comp-pair"><strong>Technology:</strong> CRM Systems (Dynamics, Salesforce, Shopify), Microsoft Office Suite, Apple OS Suite, Adobe Creative Suite</div>
-                <div class="comp-pair"><strong>Languages:</strong> English (Native), Farsi (Fluent)</div>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /timeline -->
-
-        <!-- ── Sidebar column ──────────────────────────── -->
-        <div class="resume-sidebar">
-
-          <!-- Education -->
-          <div class="sidebar-block fade-in d1">
-            <h3 class="tl-heading">Education</h3>
-            <div class="edu-card">
-              <div class="tl-date">2020 &mdash; 2022</div>
-              <div class="tl-role">AA &mdash; Business Administration</div>
-              <div class="tl-company">Santiago Canyon College</div>
-              <div class="tl-company">Focus: Retail and Resale Commerce</div>
-            </div>
-          </div>
-
-        </div><!-- /sidebar -->
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       CONTACT
-       ============================================================ -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-layout">
-
-        <!-- Left: info copy -->
-        <div>
-          <p class="section-label fade-in">Get In Touch</p>
-          <h2 class="section-title fade-in d1">Let's<br/><em>connect.</em></h2>
-          <p class="fade-in d2">
-            Whether you have a business inquiry, want to collaborate, or just want to say hi —
-            my inbox is always open. Fill out the form and I'll get back to you soon.
-          </p>
-          <p class="fade-in d3" style="font-style:italic;font-size:0.85rem;color:var(--muted,#999);margin-top:0.75rem;">Interested in my full performance record? Reach out directly &mdash; I&rsquo;d love to connect.</p>
-        </div>
-
-        <!-- Right: contact form — wired to Formspree -->
-        <!-- After creating a free account at formspree.io, replace  -->
-        <!-- REPLACE_WITH_YOUR_ID in the fetch URL below with your   -->
-        <!-- real form ID (e.g. xpwzabcd). The destination email is  -->
-        <!-- set inside your Formspree dashboard.                     -->
-        <div class="contact-form fade-in d2">
-          <form id="contact-form-bh" novalidate>
-            <div class="form-row">
-              <label for="fname">Your Name</label>
-              <input type="text" id="fname" name="name" placeholder="Johnny Appleseed" required />
-            </div>
-            <div class="form-row">
-              <label for="femail">Email Address</label>
-              <input type="email" id="femail" name="email" placeholder="Johnny@HabibiTakes.com" required />
-            </div>
-            <div class="form-row">
-              <label for="fmessage">Message</label>
-              <textarea id="fmessage" name="message" placeholder="Tell me what's on your mind…" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn" data-fs-submit-btn>Send Message &rarr;</button>
-            <div id="form-error"></div>
-            <p class="form-note">Your message goes straight to my inbox.<br/>I typically respond within 24&ndash;48 hours.</p>
-            <!-- Honeypot — hidden from real users, bots auto-fill it -->
-            <div style="position:absolute;left:-9999px;height:0;overflow:hidden;" aria-hidden="true">
-              <label for="website">Leave this empty</label>
-              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-            </div>
-            <input type="hidden" name="_timestamp" value="" />
-          </form>
-
-          <!-- Shown on successful submission -->
-          <div id="form-success" data-fs-success>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <p>Thanks for reaching out!</p>
-            <small>I&rsquo;ll get back to you soon.</small>
-          </div>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- ============================================================
+         SKILLS + EDUCATION
+         ============================================================ -->
+    <section class="grid-2" aria-label="Skills and education">
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer>
-    <p>&copy; <span id="yr">2026</span> &mdash; Bryan Habibi</p>
-  </footer>
+      <!-- Skills -->
+      <div class="card fade-in d1">
+        <p class="card-label">Skills</p>
+        <div class="skill-group">
+          <p class="skill-cat">Business &amp; Sales</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Consultative Sales</span>
+            <span class="skill-pill">Business Development</span>
+            <span class="skill-pill">Account Management</span>
+            <span class="skill-pill">Revenue Generation</span>
+            <span class="skill-pill">Client Relationship Management</span>
+            <span class="skill-pill">Negotiation &amp; Deliberations</span>
+          </div>
+        </div>
+        <div class="skill-divider"></div>
+        <div class="skill-group">
+          <p class="skill-cat">Procurement</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Strategic Sourcing</span>
+            <span class="skill-pill">Procurement</span>
+            <span class="skill-pill">Vendor Management</span>
+            <span class="skill-pill">Acquisition Strategy</span>
+            <span class="skill-pill">Inventory Management</span>
+          </div>
+        </div>
+        <div class="skill-divider"></div>
+        <div class="skill-group">
+          <p class="skill-cat">Valuation &amp; Market Intelligence</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Luxury Watch Valuation</span>
+            <span class="skill-pill">Competitive Market Pricing Analysis</span>
+          </div>
+        </div>
+        <div class="skill-divider"></div>
+        <div class="skill-group">
+          <p class="skill-cat">Technology</p>
+          <div class="skill-pills">
+            <span class="skill-pill">CRM Systems (Dynamics, Salesforce, Shopify)</span>
+            <span class="skill-pill">Microsoft Office Suite</span>
+            <span class="skill-pill">Apple OS Suite</span>
+            <span class="skill-pill">Adobe Creative Suite</span>
+          </div>
+        </div>
+        <div class="skill-divider"></div>
+        <div class="skill-group">
+          <p class="skill-cat">Languages</p>
+          <div class="skill-pills">
+            <span class="skill-pill">English (Native)</span>
+            <span class="skill-pill">Farsi (Fluent)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="card fade-in d2">
+        <p class="card-label">Education</p>
+        <h2 class="card-title">Santiago Canyon College</h2>
+        <p class="edu-body">AA · Business Administration</p>
+        <p class="edu-sub">Retail and Resale Commerce</p>
+        <p class="edu-date">2020 &ndash; 2022</p>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section id="contact" class="card fade-in">
+      <p class="card-label">Contact</p>
+      <h2 class="card-title">Let's connect</h2>
+      <p class="contact-intro">
+        Whether you have a business inquiry, want to collaborate, or just want to say hi —
+        my inbox is always open. Fill out the form and I'll get back to you soon.
+      </p>
+
+      <form id="contact-form-bh" novalidate>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" name="name" placeholder="Johnny Appleseed" required />
+          </div>
+          <div class="form-row">
+            <label for="femail">Email Address</label>
+            <input type="email" id="femail" name="email" placeholder="Johnny@HabibiTakes.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="fmessage">Message</label>
+          <textarea id="fmessage" name="message" placeholder="Tell me what's on your mind…" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn" data-fs-submit-btn>Send message &rarr;</button>
+        <div id="form-error"></div>
+        <p class="form-note">Your message goes straight to my inbox.<br/>I typically respond within 24&ndash;48 hours.</p>
+        <p class="form-note form-note-em">Interested in my full performance record? Reach out directly &mdash; I&rsquo;d love to connect.</p>
+        <!-- Honeypot — hidden from real users, bots auto-fill it -->
+        <div style="position:absolute;left:-9999px;height:0;overflow:hidden;" aria-hidden="true">
+          <label for="website">Leave this empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+        <input type="hidden" name="_timestamp" value="" />
+      </form>
+
+      <!-- Shown on successful submission -->
+      <div id="form-success" data-fs-success>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <p>Thanks for reaching out!</p>
+        <small>I&rsquo;ll get back to you soon.</small>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer>
+      <p>&copy; <span id="yr">2026</span> Bryan Habibi</p>
+    </footer>
+
+  </main>
 
 
   <!-- ============================================================
@@ -485,7 +473,7 @@
     /* ── Parallax hero background ──────────────────────────────── */
     const heroBg = document.getElementById('hero-bg');
     window.addEventListener('scroll', () => {
-      if (window.innerWidth > 600) {
+      if (heroBg && window.innerWidth > 600) {
         heroBg.style.transform = `translateY(${window.scrollY * 0.38}px)`;
       }
     }, { passive: true });
@@ -575,7 +563,37 @@
       });
     });
 
-    /* ── easter egg: stat card flip ─────────────────────────────────── */
+    /* ── Experience timeline: accordion expand / collapse ───────── */
+    (function () {
+      const rows = Array.from(document.querySelectorAll('.xp-row'));
+      rows.forEach(row => {
+        const head  = row.querySelector('.xp-head');
+        const panel = row.querySelector('.xp-panel');
+        if (!head || !panel) return;
+
+        head.addEventListener('click', () => {
+          const willOpen = !row.classList.contains('open');
+
+          // Close every row first (only one open at a time)
+          rows.forEach(r => {
+            r.classList.remove('open');
+            const p = r.querySelector('.xp-panel');
+            const h = r.querySelector('.xp-head');
+            if (p) { p.style.maxHeight = null; p.setAttribute('aria-hidden', 'true'); }
+            if (h) h.setAttribute('aria-expanded', 'false');
+          });
+
+          if (willOpen) {
+            row.classList.add('open');
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+            panel.setAttribute('aria-hidden', 'false');
+            head.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    /* ── easter egg: featured-deal card flip ────────────────────────── */
     (function () {
       const card  = document.getElementById('stat-flip-card');
       const video = document.getElementById('easter-egg-video');
@@ -695,7 +713,7 @@
           ? 'Unable to send — please check your connection and try again.'
           : (err.message || 'Something went wrong. Please try again.');
         errEl.style.display = 'block';
-        btn.textContent     = 'Send Message →';
+        btn.textContent     = 'Send message →';
         btn.disabled        = false;
       }
     });
