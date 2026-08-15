@@ -4,27 +4,21 @@
    ============================================================ */
 
 :root {
-  --bg:        #fdf6ee;
-  --surface:   #f6ecdf;
-  --text:      #2b211a;
-  --muted:     #8a7869;
-  --accent:    #b07d4e;
-  --border:    rgba(43, 33, 26, 0.16);
-  --nav-bg:    rgba(253, 246, 238, 0.82);
   --radius:    12px;
   --serif:     'Playfair Display', Georgia, 'Times New Roman', serif;
   --sans:      'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --maxw:      720px;
 }
 
+/* Dark mode is enforced permanently (class="dark" on <html>). */
 html.dark {
   --bg:        #1a1410;
   --surface:   #242018;
   --text:      #f0ebe3;
-  --muted:     #9a897a;
-  --accent:    #c08a55;
-  --border:    rgba(240, 235, 227, 0.15);
-  --nav-bg:    rgba(26, 20, 16, 0.82);
+  --muted:     #9c9488;
+  --accent:    #b07d4e;
+  --border:    rgba(255, 255, 255, 0.08);
+  --nav-bg:    rgba(26, 20, 16, 0.92);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,31 +52,15 @@ a { color: inherit; }
 }
 .skip-link:focus { left: 0; }
 
-/* ── Scroll progress bar ───────────────────────────────────── */
-#scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 2px;
-  width: 0;
-  background: var(--accent);
-  z-index: 60;
-  transition: width 0.1s linear;
-}
-
-/* ── Navigation ────────────────────────────────────────────── */
+/* ── Navigation — slim bar, switcher pills only ────────────── */
 #navbar {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: transparent;
-  border-bottom: 0.5px solid transparent;
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
-#navbar.scrolled {
   background: var(--nav-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom-color: var(--border);
+  border-bottom: 0.5px solid var(--border);
 }
 
 .nav-inner {
@@ -92,7 +70,6 @@ a { color: inherit; }
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
 }
 
@@ -115,58 +92,6 @@ a { color: inherit; }
   color: #fff;
   border-color: var(--accent);
 }
-
-.nav-right { display: flex; align-items: center; gap: 20px; }
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 13px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-.nav-links a:hover { color: var(--text); }
-.nav-links a.active { color: var(--accent); }
-
-.theme-toggle {
-  background: none;
-  border: none;
-  color: var(--muted);
-  cursor: pointer;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  transition: color 0.25s ease;
-}
-.theme-toggle:hover { color: var(--accent); }
-.theme-toggle svg { width: 18px; height: 18px; }
-.icon-sun  { display: none; }
-.icon-moon { display: block; }
-html.dark .icon-sun  { display: block; }
-html.dark .icon-moon { display: none; }
-
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-.nav-toggle span {
-  width: 20px;
-  height: 1.5px;
-  background: var(--text);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.nav-toggle.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 
 /* ── Layout shell ──────────────────────────────────────────── */
 .wrap {
@@ -709,26 +634,6 @@ footer p {
   .form-grid   { grid-template-columns: 1fr; }
   .hero-card   { padding: 44px 24px; }
   .hero-name   { font-size: 38px; }
-
-  .nav-toggle { display: flex; }
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    flex-direction: column;
-    gap: 16px;
-    background: var(--nav-bg);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    padding: 18px 20px;
-    border-bottom: 0.5px solid var(--border);
-    transform: translateY(-8px);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-  }
-  .nav-links.open { transform: none; opacity: 1; pointer-events: auto; }
 
   .xp-head { flex-wrap: wrap; }
   .xp-date { order: 3; margin-left: 22px; }
