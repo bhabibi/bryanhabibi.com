@@ -288,6 +288,41 @@ section[id] { scroll-margin-top: 80px; }
 }
 .pill-outline:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ── Hero row: text + profile photo ────────────────────────── */
+.hero-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+.hero-text { flex: 1; min-width: 0; }
+.hero-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--accent, #b07d4e);
+  flex-shrink: 0;
+}
+
+/* ── LinkedIn button ───────────────────────────────────────── */
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #0A66C2;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.linkedin-btn:hover { background: #004182; }
+.linkedin-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
 /* ── Two-column grid ───────────────────────────────────────── */
 .grid-2 {
   display: grid;
@@ -487,15 +522,77 @@ section[id] { scroll-margin-top: 80px; }
   margin: 16px 0;
 }
 
+/* ── Skill badge pills ─────────────────────────────────────── */
+.badge-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.badge {
+  background: rgba(176, 125, 78, 0.10);
+  color: var(--accent, #b07d4e);
+  border: 0.5px solid rgba(176, 125, 78, 0.25);
+  border-radius: 20px;
+  font-size: 11px;
+  padding: 3px 10px;
+  line-height: 1.5;
+}
+html.dark .badge {
+  background: rgba(176, 125, 78, 0.15);
+  color: #c9956a;
+  border-color: rgba(176, 125, 78, 0.30);
+}
+
+/* ── Skills / Education / Languages wrapper ────────────────── */
+.se-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.se-row { gap: 8px; }
+
 /* ── Education ─────────────────────────────────────────────── */
-.edu-body { font-size: 14px; color: var(--text); margin-top: 6px; }
-.edu-sub  { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.edu-name {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+.edu-body { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.edu-sub  { font-size: 12px; color: var(--muted); margin-top: 4px; }
 .edu-date {
   font-size: 11px;
   color: var(--muted);
-  margin-top: 12px;
+  margin-top: 10px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+/* ── Languages bar ─────────────────────────────────────────── */
+.lang-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+}
+.lang-label { margin-bottom: 0; }
+.lang-entries {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.lang-entry {
+  display: flex;
+  flex-direction: column;
+}
+.lang-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.lang-level { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.lang-divider {
+  width: 0.5px;
+  height: 28px;
+  background: var(--border);
+  flex-shrink: 0;
 }
 
 /* ── Contact ───────────────────────────────────────────────── */
@@ -635,6 +732,24 @@ footer p {
 
   .xp-head { flex-wrap: wrap; }
   .xp-date { order: 3; margin-left: 22px; }
+
+  /* Hero: stack photo above text, centered */
+  .hero-row { flex-direction: column; }
+  .hero-photo {
+    order: -1;
+    align-self: center;
+    width: 96px;
+    height: 96px;
+    margin-bottom: 16px;
+  }
+
+  /* Languages bar: label above, entries below */
+  .lang-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .lang-entries { width: 100%; }
 }
 
 /* ── Reduced motion ────────────────────────────────────────── */
