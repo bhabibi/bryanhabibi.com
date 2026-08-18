@@ -401,6 +401,12 @@ section[id] { scroll-margin-top: 80px; }
   margin: 14px 0 8px;
 }
 .xp-sub:first-child { margin-top: 0; }
+.vol-org {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
 .xp-bullets { list-style: none; }
 .xp-bullets li {
   font-size: 13px;
@@ -479,7 +485,7 @@ html.dark .badge {
 /* ── Education ─────────────────────────────────────────────── */
 .edu-name {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text);
 }
@@ -488,7 +494,7 @@ html.dark .badge {
 .edu-inline-date {
   color: var(--muted);
   font-weight: 400;
-  font-size: 0.85em;
+  font-size: 15px;
 }
 
 /* ── Languages bar ─────────────────────────────────────────── */
