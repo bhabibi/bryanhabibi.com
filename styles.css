@@ -513,11 +513,22 @@ footer p {
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .form-grid   { grid-template-columns: 1fr; }
-  .hero-card   { padding: 44px 24px; }
   .hero-name   { font-size: 38px; }
 
-  .xp-head { flex-wrap: wrap; }
-  .xp-date { order: 3; margin-left: 22px; }
+  .card { padding-left: 18px; padding-right: 18px; }
+  .hero-card { padding: 44px 18px; }
+
+  .xp-head {
+    flex-wrap: wrap;
+    min-height: 44px;
+  }
+  .xp-date {
+    order: 3;
+    flex: 0 0 100%;
+    margin-left: 0;
+    padding-left: 22px;
+  }
+  .xp-bullets li { font-size: 14px; }
 
   /* Hero: stack photo above text, centered */
   .hero-row { flex-direction: column; }
@@ -536,6 +547,9 @@ footer p {
     gap: 10px;
   }
   .lang-entries { width: 100%; }
+
+  .edu-inline-date { display: block; }
+  .edu-bullet { display: none; }
 }
 
 /* ── Reduced motion ────────────────────────────────────────── */
