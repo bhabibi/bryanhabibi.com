@@ -220,6 +220,9 @@ section[id] { scroll-margin-top: 80px; }
   gap: 32px;
 }
 .hero-text { flex: 1; min-width: 0; }
+/* picture is display:contents so the photo stays the flex item and the
+   existing .hero-photo rules (size, circle crop, mobile order) still apply. */
+.hero-row > picture { display: contents; }
 .hero-photo {
   width: 120px;
   height: 120px;
