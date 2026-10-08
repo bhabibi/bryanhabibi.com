@@ -375,6 +375,18 @@ section[id] { scroll-margin-top: 80px; }
   font-weight: 400;
   font-size: 12px;
 }
+.edu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.edu-copy { flex: 1; min-width: 0; }
+.edu-logo {
+  flex-shrink: 0;
+  height: 48px;
+  width: auto;
+  opacity: 0.72;
+}
 
 /* ── Languages bar ─────────────────────────────────────────── */
 .lang-bar {
@@ -550,6 +562,8 @@ footer p {
 
   .edu-inline-date { display: block; }
   .edu-bullet { display: none; }
+  .edu-item { display: block; }
+  .edu-logo { display: none; }
 }
 
 /* ── Reduced motion ────────────────────────────────────────── */
