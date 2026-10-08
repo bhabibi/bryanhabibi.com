@@ -485,10 +485,11 @@ html.dark .badge {
 }
 .edu-body { font-size: 11px; color: var(--muted); margin-top: 6px; }
 .edu-sub  { font-size: 10px; color: var(--muted); margin-top: 4px; }
+.edu-item + .edu-item { margin-top: 14px; }
 .edu-inline-date {
   color: var(--muted);
   font-weight: 400;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 /* ── Languages bar ─────────────────────────────────────────── */
