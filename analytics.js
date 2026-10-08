@@ -432,27 +432,7 @@
     });
   }
 
-  // ── 5. EASTER EGG TRACKER ────────────────────────
-  window.trackEasterEgg = function (eggName) {
-    const daily = getDaily();
-    daily.easterEggs++;
-    saveDaily(daily);
-
-    send(CHAN, {
-      embeds: [{
-        color: 0xEB459E,
-        author: { name: '🥚 Easter Egg Found! — ' + SITE_NAME },
-        fields: [
-          { name: '🎮 Egg',     value: eggName,      inline: true },
-          { name: '🕐 Time',    value: formatTime(),  inline: true },
-          { name: '🆔 Session', value: session.id,    inline: true }
-        ],
-        footer: { text: 'Someone is paying attention 👀' }
-      }]
-    });
-  };
-
-  // ── 6. SCROLL DEPTH ──────────────────────────────
+  // ── 5. SCROLL DEPTH ──────────────────────────────
   function initScrollDepth() {
     const milestones = [25, 50, 75, 100];
     if (!session.scrollMilestones) session.scrollMilestones = [];
