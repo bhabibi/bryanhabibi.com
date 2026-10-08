@@ -267,69 +267,6 @@ section[id] { scroll-margin-top: 80px; }
 }
 .feature-card .card-body { margin-top: auto; padding-top: 10px; }
 
-/* ── Featured-deal flip card (easter egg) ──────────────────── */
-.flip-card {
-  position: relative;
-  perspective: 1000px;
-  padding: 0;
-  cursor: pointer;
-  transition: box-shadow 0.4s ease, border-color 0.3s ease;
-}
-.flip-card-inner {
-  position: relative;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
-.flip-card-front {
-  height: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-.flip-card-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: rotateY(180deg);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #000;
-}
-.flip-card-back video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  pointer-events: none;
-}
-.flip-hint {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 3;
-}
-.flip-hint.visible { opacity: 1; }
-.flip-hint.hidden  { opacity: 0; }
-@keyframes fcpulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.03); }
-  100% { transform: scale(1); }
-}
-.flip-card.pulse .flip-card-inner { animation: fcpulse 0.25s ease; }
-.flip-card.click-1 { box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
-.flip-card.click-2 { box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
-.flip-card.click-3 { box-shadow: 0 6px 22px rgba(0,0,0,0.14); }
-.flip-card.click-4 { box-shadow: 0 8px 30px rgba(0,0,0,0.18); }
-
 /* ── Experience timeline ───────────────────────────────────── */
 .xp-header { margin-bottom: 6px; }
 
@@ -663,6 +600,5 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .fade-in { opacity: 1; transform: none; transition: none; }
-  .flip-card-inner { transition: none; }
   .hero-sub.tw-typing::after { animation: none; }
 }
