@@ -299,7 +299,7 @@
   const SITE_ID    = window.SITE_ID    || 'bryan';
   const SITE_NAME  = window.SITE_NAME  || 'Bryan Habibi';
   const SITE_EMOJI = window.SITE_EMOJI || '👔';
-  const SITE_COLOR = window.SITE_COLOR || 0xb07d4e;
+  const SITE_COLOR = window.SITE_COLOR || 0x9fb4c7;
   const CHAN       = SITE_ID === 'ht' ? 'ht' : 'bryan';
 
   // ── 1. PAGE VISIT ────────────────────────────────

@@ -12,13 +12,13 @@
 
 /* Dark mode is enforced permanently (class="dark" on <html>). */
 html.dark {
-  --bg:        #1a1410;
-  --surface:   #242018;
-  --text:      #f0ebe3;
-  --muted:     #9c9488;
-  --accent:    #b07d4e;
-  --border:    rgba(255, 255, 255, 0.08);
-  --nav-bg:    rgba(26, 20, 16, 0.92);
+  --bg:        #16181b;
+  --surface:   #1f2226;
+  --text:      #e8eaed;
+  --muted:     #9aa0a8;
+  --accent:    #9fb4c7;
+  --border:    rgba(255,255,255,0.08);
+  --nav-bg:    rgba(22,24,27,0.92);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,7 +44,7 @@ a { color: inherit; }
   left: -9999px;
   top: 0;
   background: var(--accent);
-  color: #fff;
+  color: #16181b;
   padding: 10px 16px;
   border-radius: 0 0 8px 0;
   z-index: 100;
@@ -89,7 +89,7 @@ a { color: inherit; }
 .switcher-btn:hover { border-color: var(--accent); }
 .switcher-btn.active {
   background: var(--accent);
-  color: #fff;
+  color: #16181b;
   border-color: var(--accent);
 }
 
@@ -203,7 +203,7 @@ section[id] { scroll-margin-top: 80px; }
 }
 .pill-filled {
   background: var(--accent);
-  color: #fff;
+  color: #16181b;
   border: 0.5px solid var(--accent);
 }
 .pill-filled:hover { opacity: 0.9; }
@@ -226,11 +226,11 @@ section[id] { scroll-margin-top: 80px; }
 .hero-row source { display: none; }
 .hero-photo {
   width: 120px;
-  height: 156px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center center;
-  border: 2px solid var(--accent, #b07d4e);
+  object-position: center top;
+  border: 2px solid var(--accent);
   flex-shrink: 0;
 }
 
@@ -460,7 +460,7 @@ textarea { min-height: 130px; resize: vertical; }
   margin-top: 6px;
   width: 100%;
   background: var(--accent);
-  color: #fff;
+  color: #16181b;
   border: none;
   border-radius: 10px;
   padding: 13px;
@@ -475,7 +475,7 @@ textarea { min-height: 130px; resize: vertical; }
 
 #form-error {
   display: none;
-  color: #c0392b;
+  color: #e06c5c;
   font-size: 13px;
   margin-top: 10px;
 }
@@ -548,7 +548,7 @@ footer p {
     order: -1;
     align-self: center;
     width: 96px;
-    height: 125px;
+    height: 96px;
     margin-bottom: 16px;
   }
 
@@ -572,3 +572,6 @@ footer p {
   .fade-in { opacity: 1; transform: none; transition: none; }
   .hero-sub.tw-typing::after { animation: none; }
 }
+
+/* palette extras */
+body{background:linear-gradient(180deg,#1c1f23 0%,#16181b 50%,#131518 100%) fixed;}
